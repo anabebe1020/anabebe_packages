@@ -9,7 +9,7 @@ class SelectBoxTestPage extends StatefulWidget {
 }
 
 class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
-  late Logger _logger;
+  final _logger = Logger();
 
   late List<String> _items;
   late String _currentItem;
@@ -19,8 +19,6 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
     _items = ['0', '1', '2', '3'];
     _currentItem = _items.first;
 
-    ///
-    _logger = Logger();
     _logger.setup('TestView');
     super.initState();
   }
@@ -29,15 +27,55 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
   Widget build(BuildContext context) {
     _logger.log('build');
 
+    const space = SizedBox(height: 30);
+    const textStyle = TextStyle(fontSize: 18);
+
     return Scaffold(
       body: Container(
+        alignment: Alignment.center,
+        height: double.infinity,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Text('normal', style: textStyle),
             SelectBox(
+              height: 40,
+              width: 200,
               items: _items,
               currentItem: _currentItem,
               onChanged: (_) {},
-            )
+            ),
+            space,
+            const Text('foreground color red', style: textStyle),
+            SelectBox(
+              height: 40,
+              width: 200,
+              foregroundColor: Colors.red,
+              items: _items,
+              currentItem: _currentItem,
+              onChanged: (_) {},
+            ),
+            space,
+            const Text('border color blue', style: textStyle),
+            SelectBox(
+              height: 40,
+              width: 200,
+              borderColor: Colors.blue,
+              items: _items,
+              currentItem: _currentItem,
+              onChanged: (_) {},
+            ),
+            space,
+            const Text('disable', style: textStyle),
+            SelectBox(
+              height: 40,
+              width: 200,
+              disable: true,
+              items: _items,
+              currentItem: _currentItem,
+              onChanged: (_) {},
+            ),
           ],
         ),
       ),

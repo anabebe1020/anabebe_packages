@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class SelectBox extends StatefulWidget {
   final double? height;
   final double? width;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
+  final Color? borderColor;
   final List<String> items;
   final String? currentItem;
-  final bool isAlert;
   final Function(String) onChanged;
   final bool disable;
 
@@ -13,9 +15,11 @@ class SelectBox extends StatefulWidget {
     Key? key,
     this.height,
     this.width,
+    this.backgroundColor,
+    this.foregroundColor,
+    this.borderColor,
     required this.items,
     required this.currentItem,
-    this.isAlert = false,
     required this.onChanged,
     this.disable = false,
   }) : super(key: key);
@@ -31,9 +35,11 @@ class SelectBoxState extends State<SelectBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      height: widget.height,
+      width: widget.width ?? double.infinity,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey, width: 1),
+        color: widget.backgroundColor,
+        border: Border.all(color: widget.borderColor ?? Colors.grey, width: 1),
         borderRadius: BorderRadius.circular(5.0),
       ),
       child: widget.currentItem != null
@@ -44,6 +50,7 @@ class SelectBoxState extends State<SelectBox> {
                   value: widget.currentItem,
                   isDense: true,
                   borderRadius: BorderRadius.circular(5.0),
+                  iconEnabledColor: widget.foregroundColor,
                   onChanged: widget.disable
                       ? null
                       : (String? newValue) {
@@ -56,12 +63,10 @@ class SelectBoxState extends State<SelectBox> {
                     return widget.items.map((String item) {
                       return Text(
                         item,
-                        style: widget.isAlert
-                            ? _textStyle.copyWith(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                              )
-                            : _textStyle.copyWith(fontWeight: FontWeight.bold),
+                        style: _textStyle.copyWith(
+                          color: widget.foregroundColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       );
                     }).toList();
                   },
