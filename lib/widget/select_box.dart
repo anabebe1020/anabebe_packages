@@ -39,7 +39,8 @@ class SelectBoxState extends State<SelectBox> {
       width: widget.width ?? double.infinity,
       decoration: BoxDecoration(
         color: widget.backgroundColor,
-        border: Border.all(color: widget.borderColor ?? Colors.grey, width: 1),
+        border:
+            Border.all(color: widget.borderColor ?? Colors.black87, width: 1),
         borderRadius: BorderRadius.circular(5.0),
       ),
       child: widget.currentItem != null
