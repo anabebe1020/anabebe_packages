@@ -50,6 +50,7 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
               height: 80,
               width: 100,
               imageUrl: _imageUrl1,
+              onTap: () => pushFullScreenModal(),
             ),
             space,
 
@@ -60,6 +61,7 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
               width: 100,
               imageUrl: _imageUrl1,
               boxFit: BoxFit.fitWidth,
+              onTap: () => pushFullScreenModal(),
             ),
             space,
 
@@ -70,6 +72,7 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
               width: 100,
               imageUrl: _imageUrl1,
               boxFit: BoxFit.scaleDown,
+              onTap: () => pushFullScreenModal(),
             ),
             space,
 
@@ -80,9 +83,23 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
               width: 100,
               imageUrl: _imageUrl1,
               boxFit: BoxFit.fill,
+              onTap: () => pushFullScreenModal(),
             ),
+            space,
+
+            const Text('touch to display FullScreenImage', style: textStyle),
           ],
         ),
+      ),
+    );
+  }
+
+  void pushFullScreenModal() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => FullScreenImage(url: _imageUrl1),
+        settings: const RouteSettings(name: 'FullScreenImage'),
+        fullscreenDialog: true,
       ),
     );
   }

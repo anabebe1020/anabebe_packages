@@ -67,11 +67,11 @@ class _MyHomePageState extends State<TestHomePage> {
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.border_all_outlined),
             label: 'SelectBox',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.image),
             label: 'GNImage',
           ),
         ],
