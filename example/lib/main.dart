@@ -1,5 +1,6 @@
 import 'package:anabebe_packages/anabebe_packages.dart';
 import 'package:example/network_image_page.dart';
+import 'package:example/pull_refresh_page.dart';
 import 'package:example/selectbox_page.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,7 @@ class _MyHomePageState extends State<TestHomePage> {
     _pageList = [
       const SelectBoxTestPage(),
       const NetworkImageTestPage(),
+      const PullRefreshScrollViewTestPage(),
     ];
 
     /// set domain(page) name
@@ -67,12 +69,16 @@ class _MyHomePageState extends State<TestHomePage> {
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.border_all_outlined),
+            icon: Icon(Icons.indeterminate_check_box_outlined),
             label: 'SelectBox',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.image),
             label: 'GNImage',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.arrow_circle_down),
+            label: 'PullRefresh',
           ),
         ],
         currentIndex: _currentIndex,
