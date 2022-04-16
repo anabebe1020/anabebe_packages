@@ -1,5 +1,5 @@
 import 'package:anabebe_packages/anabebe_packages.dart';
-import 'package:example/test_view.dart';
+import 'package:example/selectbox_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,10 +31,10 @@ class TestHomePage extends StatefulWidget {
 class _MyHomePageState extends State<TestHomePage> {
   int _currentIndex = 0;
   final _pageController = PageController();
-  late List<Widget> _pageList;
+  late List<Widget> _pageList = [];
 
   /// get instance
-  final logger = Logger();
+  final _logger = Logger();
 
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _MyHomePageState extends State<TestHomePage> {
     ];
 
     /// set domain(page) name
-    logger.setup('main');
+    _logger.setup('main');
     super.initState();
   }
 
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<TestHomePage> {
       body: PageView(
         controller: _pageController,
         onPageChanged: (index) {
-          logger.log('onPageChanged $index');
+          _logger.log('onPageChanged $index');
           setState(() {
             _currentIndex = index;
           });
@@ -82,9 +82,12 @@ class _MyHomePageState extends State<TestHomePage> {
         ],
         currentIndex: _currentIndex,
         onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
+          _logger.log('onTap $index');
+          _pageController.animateToPage(
+            index,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.ease,
+          );
         },
       ),
     );
