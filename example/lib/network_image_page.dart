@@ -16,7 +16,7 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
 
   @override
   initState() {
-    _logger.setup('ImageTestPage');
+    _logger.setup('GeneralNetworkImageTestPage');
     super.initState();
   }
 
@@ -28,6 +28,12 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
     const textStyle = TextStyle(fontSize: 18);
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('GeneralNetworkImage'),
+        titleTextStyle: const TextStyle(fontSize: 18.0, color: Colors.blueGrey),
+        backgroundColor: Colors.white12,
+        elevation: 0,
+      ),
       body: Container(
         alignment: Alignment.center,
         height: double.infinity,
@@ -35,7 +41,7 @@ class _NetworkImageTestPageState extends State<NetworkImageTestPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('w100 * h80', style: textStyle),
+            const Text('h80 * w100', style: textStyle),
             space,
 
             /// no boxFit

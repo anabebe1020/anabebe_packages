@@ -52,12 +52,6 @@ class _MyHomePageState extends State<TestHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('anabebe_packages Test View'),
-        titleTextStyle: const TextStyle(fontSize: 18.0, color: Colors.blueGrey),
-        backgroundColor: Colors.white12,
-        elevation: 0,
-      ),
       body: PageView(
         controller: _pageController,
         onPageChanged: (index) {
@@ -78,7 +72,7 @@ class _MyHomePageState extends State<TestHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            label: 'Image',
+            label: 'GNImage',
           ),
         ],
         currentIndex: _currentIndex,

@@ -34,6 +34,12 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
     const textStyle = TextStyle(fontSize: 18);
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('SelectBox'),
+        titleTextStyle: const TextStyle(fontSize: 18.0, color: Colors.blueGrey),
+        backgroundColor: Colors.white12,
+        elevation: 0,
+      ),
       body: Container(
         alignment: Alignment.center,
         height: double.infinity,
