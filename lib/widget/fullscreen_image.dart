@@ -1,5 +1,6 @@
-import 'package:anabebe_packages/widget/general_network_image.dart';
 import 'package:flutter/material.dart';
+
+import 'general_network_image.dart';
 
 class FullScreenImage extends StatefulWidget {
   final String url;

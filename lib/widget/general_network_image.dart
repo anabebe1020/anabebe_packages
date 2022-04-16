@@ -25,14 +25,14 @@ class GeneralNetworkImage extends StatelessWidget {
             width: width,
             fit: boxFit ?? BoxFit.cover,
             errorWidget: (_, __, ___) => Image.asset(
-              "assets/noimage.png",
+              "../assets/noimage.png",
               width: width,
               height: height,
               fit: boxFit ?? BoxFit.cover,
             ),
           )
         : Image.asset(
-            "assets/noimage.png",
+            "../assets/noimage.png",
             width: width,
             height: height,
             fit: boxFit ?? BoxFit.cover,

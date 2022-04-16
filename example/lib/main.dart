@@ -1,4 +1,5 @@
 import 'package:anabebe_packages/anabebe_packages.dart';
+import 'package:example/network_image_page.dart';
 import 'package:example/selectbox_page.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class _MyHomePageState extends State<TestHomePage> {
   void initState() {
     _pageList = [
       const SelectBoxTestPage(),
-      const SelectBoxTestPage(),
+      const NetworkImageTestPage(),
     ];
 
     /// set domain(page) name
