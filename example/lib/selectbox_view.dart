@@ -9,7 +9,7 @@ class SelectBoxTestPage extends StatefulWidget {
 }
 
 class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
-  late Logger logger;
+  late Logger _logger;
 
   late List<String> _items;
   late String _currentItem;
@@ -20,14 +20,14 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
     _currentItem = _items.first;
 
     ///
-    logger = Logger();
-    logger.setup('TestView');
+    _logger = Logger();
+    _logger.setup('TestView');
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    logger.log('build');
+    _logger.log('build');
 
     return Scaffold(
       body: Container(

@@ -10,7 +10,7 @@ class Logger {
 
   Logger._internal();
 
-  late final String _logName;
+  String _logName = '';
 
   setup(String logName) {
     _logName = logName;
