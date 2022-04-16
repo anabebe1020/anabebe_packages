@@ -1,5 +1,5 @@
 import 'package:anabebe_packages/anabebe_packages.dart';
-import 'package:example/selectbox_view.dart';
+import 'package:example/selectbox_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -22,7 +22,7 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
     /// set currentItem
     _currentItem = _items.first;
 
-    _logger.setup('TestView');
+    _logger.setup('SelectBoxTestPage');
     super.initState();
   }
 
