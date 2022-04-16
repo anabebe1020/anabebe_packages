@@ -75,7 +75,8 @@ class SelectBoxState extends State<SelectBox> {
                       value: item,
                       child: Text(
                         item,
-                        style: _textStyle,
+                        style:
+                            _textStyle.copyWith(color: widget.foregroundColor),
                       ),
                     );
                   }).toList(),
