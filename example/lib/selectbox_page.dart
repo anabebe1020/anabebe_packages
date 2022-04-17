@@ -12,15 +12,12 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
   final _logger = Logger();
 
   late List<String> _items;
-  late String _currentItem;
+  final _currentItems = ['0', '0', '0', '0', '0', '0'];
 
   @override
   initState() {
     /// set items
     _items = ['0', '1', '2', '3'];
-
-    /// set currentItem
-    _currentItem = _items.first;
 
     _logger.setup('SelectBoxTestPage');
     super.initState();
@@ -53,8 +50,10 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
               height: 40,
               width: 200,
               items: _items,
-              currentItem: _currentItem,
-              onChanged: (_) {},
+              currentItem: _currentItems[0],
+              onChanged: (value) => setState(() {
+                _currentItems[0] = value;
+              }),
             ),
             space,
 
@@ -65,8 +64,10 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
               width: 200,
               foregroundColor: Colors.red,
               items: _items,
-              currentItem: _currentItem,
-              onChanged: (_) {},
+              currentItem: _currentItems[1],
+              onChanged: (value) => setState(() {
+                _currentItems[1] = value;
+              }),
             ),
             space,
 
@@ -77,8 +78,10 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
               width: 200,
               borderColor: Colors.blue,
               items: _items,
-              currentItem: _currentItem,
-              onChanged: (_) {},
+              currentItem: _currentItems[2],
+              onChanged: (value) => setState(() {
+                _currentItems[2] = value;
+              }),
             ),
             space,
 
@@ -89,8 +92,10 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
               width: 200,
               disable: true,
               items: _items,
-              currentItem: _currentItem,
-              onChanged: (_) {},
+              currentItem: _currentItems[3],
+              onChanged: (value) => setState(() {
+                _currentItems[3] = value;
+              }),
             ),
             space,
 
@@ -100,16 +105,20 @@ class _SelectBoxTestPageState extends State<SelectBoxTestPage> {
               height: 30,
               width: 120,
               items: _items,
-              currentItem: _currentItem,
-              onChanged: (_) {},
+              currentItem: _currentItems[4],
+              onChanged: (value) => setState(() {
+                _currentItems[4] = value;
+              }),
             ),
             space,
             SelectBox(
               height: 60,
               width: 300,
               items: _items,
-              currentItem: _currentItem,
-              onChanged: (_) {},
+              currentItem: _currentItems[5],
+              onChanged: (value) => setState(() {
+                _currentItems[5] = value;
+              }),
             ),
           ],
         ),
