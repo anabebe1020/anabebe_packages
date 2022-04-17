@@ -12,10 +12,12 @@ class PullRefreshScrollViewTestPage extends StatefulWidget {
 class _PullRefreshScrollViewTestPageState
     extends State<PullRefreshScrollViewTestPage> {
   final _logger = Logger();
-  final _controller = ScrollController();
   int _currentIndex = 0;
   final _items = ['0'];
   double _currentPosition = 0.0;
+
+  /// set ScrollController
+  final _controller = ScrollController();
 
   @override
   initState() {
@@ -39,6 +41,7 @@ class _PullRefreshScrollViewTestPageState
         elevation: 0,
       ),
       body: PullRefreshScrollView(
+        // Use as ScrollView
         scrollController: _controller,
         child: ListView.separated(
           itemBuilder: (context, index) => _listItem(_items[index]),
